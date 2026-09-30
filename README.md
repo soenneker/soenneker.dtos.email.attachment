@@ -28,7 +28,6 @@ var attachment = new EmailAttachmentDto
 
 `Data` defaults to an empty array and `MimeType` defaults to `application/octet-stream`. `FileName` is not initialized, so assign it before sending or serialization.
 
-System.Text.Json serializes the DTO as `fileName`, `data`, and `mimeType`; the byte array becomes a base64 JSON string. Newtonsoft.Json behavior depends on the caller’s naming strategy because the DTO declares only System.Text.Json attributes.
 
 The DTO retains the supplied byte-array reference and does not copy, stream, compress, encrypt, or dispose it. Avoid loading unbounded files into memory, and apply the email provider’s attachment-size limits before constructing a message.
 
